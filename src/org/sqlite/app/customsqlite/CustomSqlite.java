@@ -98,6 +98,7 @@ public class CustomSqlite extends Activity
     if( Arrays.equals(buffer, (new String("SQLite")).getBytes()) ){
       res = "unencrypted";
     }
+    in.close();
     return res;
   }
 
@@ -108,7 +109,7 @@ public class CustomSqlite extends Activity
     SQLiteDatabase.deleteDatabase(DB_PATH);
     final SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DB_PATH, null);
 
-    String db_path2 = DB_PATH.toString() + "2";
+    // String db_path2 = DB_PATH.toString() + "2";
 
     db.execSQL("CREATE TABLE t1(x, y)");
     db.execSQL("INSERT INTO t1 VALUES (1, 2), (3, 4)");
@@ -146,6 +147,7 @@ public class CustomSqlite extends Activity
       public void run() {
         SQLiteStatement st = db.compileStatement("SELECT sum(x+y) FROM t1");
         String res = st.simpleQueryForString();
+        res.toString();
       }
     });
 

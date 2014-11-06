@@ -19,43 +19,23 @@
 */
 
 package org.sqlite.database;
+import android.annotation.TargetApi;
 import android.database.Cursor;
-import android.database.CursorWindow;
+
 
 /* import org.apache.commons.codec.binary.Hex; */
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.content.OperationApplicationException;
-import org.sqlite.database.sqlite.SQLiteAbortException;
-import org.sqlite.database.sqlite.SQLiteConstraintException;
+import android.os.Build;
 import org.sqlite.database.sqlite.SQLiteDatabase;
-import org.sqlite.database.sqlite.SQLiteDatabaseCorruptException;
-import org.sqlite.database.sqlite.SQLiteDiskIOException;
-import org.sqlite.database.sqlite.SQLiteException;
-import org.sqlite.database.sqlite.SQLiteFullException;
-import org.sqlite.database.sqlite.SQLiteProgram;
 import org.sqlite.database.sqlite.SQLiteStatement;
-import android.os.OperationCanceledException;
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
-import android.util.Log;
-
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-import java.text.Collator;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
 /**
  * Static utility methods for dealing with databases and {@link Cursor}s.
  */
-public class ExtraUtils {
-    private static final String TAG = "ExtraUtils";
+@TargetApi(Build.VERSION_CODES.HONEYCOMB) public class ExtraUtils {
+    // private static final String TAG = "ExtraUtils";
 
-    private static final boolean DEBUG = false;
+    // private static final boolean DEBUG = false;
 
     /** One of the values returned by {@link #getSqlStatementType(String)}. */
     public static final int STATEMENT_SELECT = 1;

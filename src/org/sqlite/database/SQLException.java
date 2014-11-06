@@ -24,7 +24,10 @@ package org.sqlite.database;
  * An exception that indicates there was an error with SQL parsing or execution.
  */
 public class SQLException extends RuntimeException {
-    public SQLException() {
+	private static final long serialVersionUID = 6834771325151351641L;
+
+	public SQLException() {
+		
     }
 
     public SQLException(String error) {
